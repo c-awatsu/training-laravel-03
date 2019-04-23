@@ -3,15 +3,6 @@
 @section('content')
     {{ Form::open(['route' => 'categories.store']) }}
     @include('components.alert', ['errors' => $errors])
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
     <div class="form-group">
         {{ Form::label('name', 'カテゴリー名：') }}
         {{ Form::text('name', null, ['class' => 'form-control']) }}
